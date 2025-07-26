@@ -1,0 +1,62 @@
+.promo {
+    background-image: url(../images/promo-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+}
+.promo__inner {
+    display: flex;
+    align-items: center;
+}
+.promo__text {
+    font-family: 'Yeseva One', cursive;
+    font-size: 40px;
+    color: #fff;
+    padding-left: 56px;
+    max-width: 859px;
+    margin-right: 110px;
+}
+.promo__link {
+    color: #272727;
+    background-color: #ffbd59;
+    display: inline-block;
+    padding: 14px 25px 12px;
+    min-width: 135px;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1000px) {
+    .promo__text {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo__text {
+        font-size: 15px;
+    }
+    .promo__link {
+        font-size: 12px;
+    }
+    .promo {
+        padding: 67px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo {
+        padding: 42px 0;
+    }
+    .promo__link {
+        padding: 8px 8px 7px;
+    }
+}
+
+@media (max-width: 360px) {
+    .promo__text {
+        margin-right: 50px;
+    }
+}

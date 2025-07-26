@@ -1,0 +1,91 @@
+.contacts {
+    padding: 150px 0 50px;
+}
+.contacts__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form {
+    background-color: #fff;
+    width: 664px;
+    padding: 75px 42px 67px;
+    margin-right: 46px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1)
+}
+.form__title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+.form__input {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    padding: 7px 10px;
+    color: black;
+}
+.form__input::placeholder {
+    color: #b3b3b3;
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.form__btn {
+    background-color: #ffbd59;
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    color: #272727;
+    margin-top: 36px;
+    padding: 17px 34px;
+}
+@media (max-width: 1000px) {
+    .form {
+        padding: 25px 12px 37px;
+    }
+    .contacts__img {
+        width: 335px;
+    }
+
+    .contacts__img {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 440px;
+        gap: 0 20px;
+        padding: 30px 22px;
+    }
+    .form__title {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .form__btn {
+        margin-top: 10px;
+    }
+    .contacts__img {
+        width: 187px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts {
+        padding-top: 50px;
+    }
+    .form {
+        margin-right: 0;
+    }
+    .form__input::placeholder{
+        font-size: 10px;
+    }
+    .contacts__img {
+        display: none;
+    }
+}
