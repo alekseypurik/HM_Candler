@@ -1,4 +1,4 @@
-export default function firstSwiper() {
+export function firstSwiper() {
     const swiperOne = new Swiper('.feedback__slider', {
         loop: true,
 
@@ -8,7 +8,7 @@ export default function firstSwiper() {
     });
 }
 
-export default function secondSwiper() {
+export function secondSwiper() {
     const swiperTwo = new Swiper('.certificates__slider', {
         loop: true,
         slidesPerView: 3,

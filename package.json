@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "optimize": "imagemin images/* --out-dir=optimized-images",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run optimize",
     "preview": "vite preview",
     "sass-watch": "sass --watch ."
   },
   "devDependencies": {
+    "imagemin-cli": "^8.0.0",
     "sass": "^1.89.2",
     "vite": "^7.0.4"
   }

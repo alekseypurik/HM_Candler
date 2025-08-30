@@ -1,62 +1,74 @@
 .header {
     background-color: #fff8f3;
+
+    &__inner {
+        padding-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-.header__inner {
-    padding-top: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 .menu__list {
     display: flex;
     gap: 20px;
-}
-.menu__list-link {
-    text-transform: uppercase;
-}
-.phone {
-    position: relative;
-}
-.phone::before {
-    content: '';
-    position: absolute;
-    background-image: url(../images/phone.svg);
-    width: 20px;
-    height: 20px;
-    left: -23px;
-    top: -3px;
+
+    &-link {
+        text-transform: uppercase;
+    }
 }
 
+
+
+.phone {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../images/phone.svg);
+        width: 20px;
+        height: 20px;
+        left: -23px;
+        top: -3px;
+    }
+}
+
+
+
 @media (max-width: 768px) {
-    .phone::before {
-        width: 14px;
-        height: 14px;
-        left: -16px;
-        top: -2px;
-        background-size: cover;
+    .phone {
+        &::before {
+            width: 14px;
+            height: 14px;
+            left: -16px;
+            top: -2px;
+            background-size: cover;
+        }
     }
 }
 
 @media (max-width: 640px) {
-    .header__menu-list {
-        width: 153px;
-        background-color: #7b6152;
-        color: #fff8f3;
-        flex-direction: column;
-        gap: 20px 0;
-        padding: 25px 35px 25px 45px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translateY(-110%);
-        transition: transform .5s ease;
-        z-index: 5;
-    }
-    .header__menu-list.menu--open {
-        transform: translateY(0%);
-    }
-    
     .header__menu {
         order: 1;
+
+        &-list {
+            width: 153px;
+            background-color: #7b6152;
+            color: #fff8f3;
+            flex-direction: column;
+            gap: 20px 0;
+            padding: 25px 35px 25px 45px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(-110%);
+            transition: transform .5s ease;
+            z-index: 5;
+        }
+
+        &-list.menu--open {
+            transform: translateY(0%);
+        }
     }
 }

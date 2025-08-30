@@ -1,85 +1,93 @@
-.products__content {
-    gap: 50px 90px;
-}
-.products__item {
-    width: 290px;
-    margin: 0 auto;
-    text-align: center;
-}
-.products__item-img {
-    margin-bottom: 8px;
-}
-.products__item-price {
-    font-family: 'Yeseva One', cursive;
-    font-weight: 400;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-.products__item-title {
-    font-family: 'Yeseva One', cursive;
-    font-weight: 400;
-    margin-bottom: 16px;
-    font-size: 16px;
-}
-.products__item-text {
-    margin-bottom: 27px;
-    font-size: 12px;
+.products {
+    &__content {
+        gap: 50px 90px;
+    }
+    &__item {
+        width: 290px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__item-img {
+        margin-bottom: 8px;
+    }
+    &__item-price {
+        font-family: var(--font-family-accent);
+        font-weight: 400;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+    &__item-title {
+        font-family: var(--font-family-accent);
+        font-weight: 400;
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+    &__item-text {
+        margin-bottom: 27px;
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 1000px) {
-    .products__content {
-        gap: 67px;
+    .products {
+        &__content {
+            gap: 67px;
+        }
     }
 }
 
 @media (max-width: 900px) {
-    .products__content {
-        gap: 30px 16px;
+    .products {
+        &__content {
+            gap: 30px 16px;
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .products__item {
-        width: 200px;
-    }
-    .products__item-img {
-        width: 200px;
-        margin-bottom: 6px;
-    }
-    
-    .products__item-text {
-        font-size: 8px;
-        margin-bottom: 18px;
-    }
-    .products__item-price {
-        font-size: 12px;
-        margin-bottom: 7px;
-    }
-    .products__item-title {
-        font-size: 12px;
-        margin-bottom: 9px;
+    .products {
+        &__item {
+            width: 200px;
+        }
+        &__item-img {
+            width: 200px;
+            margin-bottom: 6px;
+        }
+        &__item-text {
+            font-size: 8px;
+            margin-bottom: 18px;
+        }
+        &__item-price {
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+        &__item-title {
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
     }
 }
 
 @media (max-width: 360px) {
-    .products__item {
-        width: 150px;
-    }
-    .products__content {
-        gap: 40px 7px;
-    }
-    .products__item-img {
-        width: 150px;
-    }
-    
-    .products__item-price {
-        font-size: 10px;
-        margin-bottom: 5px;
-    }
-    .products__item-title {
-        font-size: 10px;
-    }
-    .products__item-text {
-        margin-bottom: 16px;
+    .products {
+        &__item {
+            width: 150px;
+        }
+        &__content {
+            gap: 40px 7px;
+        }
+        &__item-img {
+            width: 150px;
+        }
+        &__item-price {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        &__item-title {
+            font-size: 10px;
+        }
+        &__item-text {
+            margin-bottom: 16px;
+        }
     }
 }

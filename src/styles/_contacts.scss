@@ -1,25 +1,28 @@
 .contacts {
     padding: 150px 0 50px;
-}
-.contacts__inner {
+
+    &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    };
 }
+
 .form {
-    background-color: #fff;
+    background-color: var(--color-white);
     width: 664px;
     padding: 75px 42px 67px;
     margin-right: 46px;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1)
-}
-.form__title {
-    font-family: 'Yeseva One', cursive;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+
+    &__title {
+    font-family: var(--font-family-base);
     font-size: 40px;
     margin-bottom: 50px;
-}
-.form__input {
-    background-color: #fff;
+    };
+
+    &__input {
+    background-color: var(--color-white);
     border: none;
     border-bottom: 1px solid black;
     width: 100%;
@@ -27,23 +30,28 @@
     margin-bottom: 15px;
     padding: 7px 10px;
     color: black;
-}
-.form__input::placeholder {
+    };
+
+    &__input::placeholder {
     color: #b3b3b3;
-    font-family: 'Comfortaa';
+    font-family: var(--font-family-accent);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-.form__btn {
-    background-color: #ffbd59;
-    font-family: 'Comfortaa';
+    };
+
+    &__btn {
+    background-color: var(--color-yellow);
+    font-family: var(--font-family-accent);
     font-size: 14px;
     color: #272727;
     margin-top: 36px;
     padding: 17px 34px;
+    };
 }
+
+
 @media (max-width: 1000px) {
     .form {
         padding: 25px 12px 37px;
@@ -62,13 +70,15 @@
         width: 440px;
         gap: 0 20px;
         padding: 30px 22px;
-    }
-    .form__title {
+
+        &__title {
         font-size: 15px;
         margin-bottom: 20px;
-    }
-    .form__btn {
+        };
+
+        &__btn {
         margin-top: 10px;
+        };
     }
     .contacts__img {
         width: 187px;
@@ -78,14 +88,16 @@
 @media (max-width: 480px) {
     .contacts {
         padding-top: 50px;
+
+        &__img {
+        display: none;
+        };
     }
     .form {
         margin-right: 0;
-    }
-    .form__input::placeholder{
+
+        &__input::placeholder{
         font-size: 10px;
-    }
-    .contacts__img {
-        display: none;
+        };
     }
 }

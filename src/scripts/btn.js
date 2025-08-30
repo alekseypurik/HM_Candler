@@ -1,4 +1,4 @@
-export default function burgerBtn() {
+export function burgerBtn() {
     const menuBtn = document.querySelector('.menu__btn');
     const menuMobile = document.querySelector('.header__menu-list');
 
