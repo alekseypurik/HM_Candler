@@ -1,3 +1,8 @@
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export function firstSwiper() {
     const swiperOne = new Swiper('.feedback__slider', {
         loop: true,

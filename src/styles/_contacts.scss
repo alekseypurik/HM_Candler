@@ -33,7 +33,7 @@
     };
 
     &__input::placeholder {
-    color: #b3b3b3;
+    color: var(--color-smoke);
     font-family: var(--font-family-accent);
     font-size: 14px;
     font-style: normal;

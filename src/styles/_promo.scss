@@ -20,7 +20,7 @@
     }
 
     &__link {
-        color: #272727;
+        color: var(--color-darkgray);
         background-color: var(--color-yellow);
         display: inline-block;
         padding: 14px 25px 12px;

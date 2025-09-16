@@ -1,9 +1,12 @@
-import {burgerBtn} from './btn.js';
-import {firstSwiper, secondSwiper} from './swiper.js';
-import {handleBtn} from './accordeon.js';
+import { burgerBtn } from './btn.js';
+import { firstSwiper, secondSwiper } from './swiper.js';
+import { toggleAccordion } from './accordeon.js';
+import { renderTeam } from './team.js';
 import '../styles/main.scss';
 
-handleBtn()
+
+toggleAccordion()
 burgerBtn()
 firstSwiper()
 secondSwiper()
+renderTeam()

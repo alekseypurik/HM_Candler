@@ -88,7 +88,7 @@ button {
         position: absolute;
         left: 20px;
         bottom: 8px;
-        background-color: #7b6152;
+        background-color: var(--color-dustybrown);
         width: 1000%;
         height: 1px;
     }
@@ -106,12 +106,12 @@ button {
 
 .menu__btn span {
     height: 1px;
-    background-color: #7b6152;
+    background-color: var(--color-dustybrown);
     width: 100%;
 }
 
 .main {
-    background-color: #fff8f3;
+    background-color: var(--color-warm-white);
     overflow-x: clip;
 }
 

@@ -1,5 +1,5 @@
 .header {
-    background-color: #fff8f3;
+    background-color: var(--color-warm-white);
 
     &__inner {
         padding-top: 4px;
@@ -54,8 +54,8 @@
 
         &-list {
             width: 153px;
-            background-color: #7b6152;
-            color: #fff8f3;
+            background-color: var(--color-dustybrown);
+            color: var(--color-warm-white);
             flex-direction: column;
             gap: 20px 0;
             padding: 25px 35px 25px 45px;
