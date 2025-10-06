@@ -1,5 +1,7 @@
+import { teamMembers } from "../data/team-data";
+
 export function renderTeam() {
-    const section = document.querySelector(".team.section");
+    const section = document.querySelector('[data-section="team"]');
     if (!section) return;
 
     const container = document.createElement("div");
@@ -23,41 +25,146 @@ export function renderTeam() {
     const content = document.createElement("div");
     content.className = "team__content section__content-descr";
 
-    const teamMembers = [
-        { img: "images/team-1.jpg", name: "Преподаватель Артём", descr: "Имеет опыт преподавания и работы 4 года" },
-        { img: "images/team-2.jpg", name: "Преподаватель Анна", descr: "Имеет опыт преподавания и работы 6 лет" },
-        { img: "images/team-3.jpg", name: "Преподаватель Галина", descr: "Обучает сфере дизайна и декорирования" },
-        { img: "images/team-4.jpg", name: "Маркетолог Ольга", descr: "Поможет вам с рекламой" }
-    ];
-
     teamMembers.forEach(member => {
-        const item = document.createElement("div");
-        item.className = "team__item";
+        content.appendChild(createMember(member));
+    });
 
-        const img = document.createElement("img");
+    function createMember(member) {
+        const item = createElement('div', 'team__item');
+        const avatar = createAvatar(member);
+        const infoBox = createInfoBox(member);
+
+        item.append(avatar, infoBox);
+        return item;
+    }
+
+    function createAvatar(member) {
+        const img = createElement('img', 'team__img');
         img.src = member.img;
         img.alt = member.name;
-        img.className = "team__img";
+        img.loading = 'lazy';
+        return img;
+    }
 
-        const box = document.createElement("div");
-        box.className = "team__item-box";
+    function createInfoBox(member) {
+        const box = createElement('div', 'team__item-box');
+        const name = createElement('p', 'team__item-name', member.name);
+        const descr = createElement('p', 'team__item-descr', member.descr);
+        
+        const detailsBtn = createElement('button', 'team__details-btn', 'Подробнее');
+        detailsBtn.type = 'button';
+        detailsBtn.addEventListener('click', () => openModal(member));
 
-        const name = document.createElement("p");
-        name.className = "team__item-name";
-        name.textContent = member.name;
+        box.append(name, descr, detailsBtn);
+        return box;
+    }
 
-        const descr = document.createElement("p");
-        descr.className = "team__item-descr";
-        descr.textContent = member.descr;
+    function createElement(tag, className, textContent = '') {
+        const element = document.createElement(tag);
+        element.className = className;
+        if (textContent) element.textContent = textContent;
+        return element;
+    }
 
-        box.appendChild(name);
-        box.appendChild(descr);
+    function openModal(member) {
+        const overlay = createElement('div', 'modal-overlay');
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        `;
 
-        item.appendChild(img);
-        item.appendChild(box);
+        const modal = createElement('div', 'team-modal');
+        modal.style.cssText = `
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        `;
 
-        content.appendChild(item);
-    });
+        const closeBtn = createElement('button', 'modal-close', '×');
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        closeBtn.addEventListener('click', () => overlay.remove());
+
+        const modalContent = createElement('div', 'modal-content');
+        
+        const modalImage = createElement('img', 'modal-image');
+        modalImage.src = member.img;
+        modalImage.alt = member.name;
+        modalImage.style.cssText = `
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        `;
+
+        const modalName = createElement('h3', 'modal-name', member.name);
+        modalName.style.cssText = `
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: #1e212c;
+        `;
+
+        const modalDescr = createElement('p', 'modal-descr', member.descr);
+        modalDescr.style.cssText = `
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+            color: #424551;
+        `;
+
+        const modalFullInfo = createElement('p', 'modal-full-info', member.fullInfo);
+        modalFullInfo.style.cssText = `
+            margin: 0;
+            line-height: 1.6;
+            color: #5a5a5a;
+        `;
+
+        modalContent.append(modalImage, modalName, modalDescr, modalFullInfo);
+        modal.append(closeBtn, modalContent);
+        overlay.appendChild(modal);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.remove();
+            }
+        });
+
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') {
+                overlay.remove();
+                document.removeEventListener('keydown', handleEsc);
+            }
+        };
+        document.addEventListener('keydown', handleEsc);
+
+        document.body.appendChild(overlay);
+    }
 
     container.appendChild(descr);
     container.appendChild(content);

@@ -8,9 +8,11 @@
         padding-bottom: 0;
         gap: 75px;
     }
+
     &__item {
         position: relative;
     }
+
     &__item-box {
         background-color: var(--color-dustybrown);
         text-align: center;
@@ -21,12 +23,30 @@
         bottom: 13px;
         right: 33px;
     }
+
     &__item-name {
         font-family: var(--font-family-base);
         font-size: 12px;
     }
+
     &__item-descr {
         font-size: 10px;
+    }
+
+    &__details-btn {
+        background: inherit;
+        color: var(--color-white);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        margin-top: 0.75rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background: var(--color-gray);
+        }
     }
 }
 
@@ -37,6 +57,7 @@
         &__content {
             gap: 30px 20px;
         }
+
         &__title {
             font-size: 37px;
         }
@@ -56,15 +77,18 @@
         &__img {
             width: 140px;
         }
+
         &__item-box {
             padding: 9px 6px 10px;
             width: 109px;
             bottom: 10px;
             right: -20px;
         }
+
         &__item-name {
             font-size: 8px;
         }
+
         &__item-descr {
             font-size: 7px;
         }
@@ -91,20 +115,25 @@
         &__content {
             grid-template-columns: auto;
         }
+
         &__img {
             width: 204px;
         }
+
         &__item-name {
             font-size: 12px;
         }
+
         &__item-descr {
             font-size: 10px;
         }
+
         &__item-box {
             width: 150px;
             bottom: 15px;
             left: 148px;
         }
+
         &__content {
             padding-left: 10px;
         }
