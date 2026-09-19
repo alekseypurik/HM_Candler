@@ -4,6 +4,8 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 ![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat&logo=swiper&logoColor=white)
 
+Пет-проект. Создан в учебных целях.
+
 # HM Candler
 
 Адаптивный сайт-визитка (лендинг) для магазина свечей ручной работы.
